@@ -1,0 +1,10 @@
+Existe esses
+https://github.com/a5hik/ng-sortable
+https://github.com/angular-ui/ui-sortable
+
+
+Mas Usei esses
+https://rubaxa.github.io/Sortable/
+https://github.com/RubaXa/Sortable
+https://github.com/voidberg/html5sortable
+https://github.com/RubaXa/Sortable/blob/master/ng-sortable.js

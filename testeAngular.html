@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS and Sortable demo</title>
+
+  <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+
+  <!-- AngularJS -->
+  <script src="angular.min.js"></script>
+
+  <!-- Sortable.js -->
+  <script src="Sortable.js"></script>
+
+  <!-- ng-sortable.js -->
+  <script src="ng-sortable.js"></script>
+
+
+</head>
+<body>
+
+  <div ng-app="myApp" ng-controller="demo">
+
+    <!-- Use directive ng-sortable -->
+    <ul ng-sortable="config" class="collection">
+      <li ng-repeat="item in items" class="collection-item">
+        {{item.name}}
+      </li>
+    </ul>
+
+  </div>
+
+<script>
+    angular.module('myApp', ['ng-sortable'])
+      .controller('demo', ['$scope', function ($scope) {
+          $scope.config = {
+            onSort: function(evt){
+              var from = evt.oldIndex
+              var to = evt.newIndex
+
+              if(from < to){
+                //Dados necessários para submeter
+                console.log('Down', evt);
+                var itemName = evt.model.name;
+                var newIndex = evt.newIndex;
+                var oldIndex = evt.oldIndex;
+              }else{
+                //Dados necessários para submeter
+                console.log('Up', evt);
+                var itemName = evt.model.name;
+                var newIndex = evt.newIndex;
+                var oldIndex = evt.oldIndex;
+              }
+            },
+          }
+          $scope.items = [{id: '1', name:'learn Sortable'},
+                          {id: '2', name:'use gn-sortable'},
+                          {id: '3', name:'Enjoy'}];
+      }]);
+</script>
+</body>
+</html>
